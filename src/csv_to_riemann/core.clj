@@ -7,7 +7,7 @@
   (:gen-class))
 
 (def cli-options
-  [["-csv" "--csv CSV" "path to CSV file"]
+  [["-csv" "--csv" "path to CSV file"]
    ["-r" "--riemann-server" "Riemann host/destination of parsed CSV files"]
    ["-h" "--help"]])
 
@@ -23,7 +23,7 @@
         csv-path (first parsed-args)
         riemann-host (second parsed-args)
         c (r/tcp-client {:host (or riemann-host "127.0.0.1")})]
-    (with-open [reader (io/reader (or csv-path "/tmp/archv/w38-ppsos-sample/s3-main.csv"))]
+    (with-open [reader (io/reader (or csv-path "/home/ubuntu/cos/archive/w1/s3-main.csv"))]
      (doall (for [el (csv-data->maps (csv/read-csv reader))]
               (do (println "sending: " el)
                   (-> c (r/send-event el)
