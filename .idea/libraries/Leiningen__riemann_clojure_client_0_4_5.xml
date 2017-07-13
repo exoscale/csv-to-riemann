@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Leiningen: riemann-clojure-client:0.4.5">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/riemann-clojure-client/riemann-clojure-client/0.4.5/riemann-clojure-client-0.4.5.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
